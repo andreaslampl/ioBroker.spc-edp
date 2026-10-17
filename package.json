@@ -1,0 +1,19 @@
+{
+  "name": "iobroker.spc-edp",
+  "version": "0.1.0",
+  "description": "Vanderbilt SPC alarm panel via EDP for ioBroker",
+  "author": "andylampl",
+  "license": "MIT",
+  "keywords": ["ioBroker", "Vanderbilt", "SPC", "EDP", "alarm", "intrusion"],
+  "main": "main.js",
+  "files": ["admin/", "lib/", "main.js", "io-package.json", "LICENSE", "README.md"],
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@iobroker/adapter-core": "^3.2.3"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  }
+}

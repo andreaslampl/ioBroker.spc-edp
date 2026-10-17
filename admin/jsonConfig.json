@@ -1,0 +1,78 @@
+{
+  "i18n": true,
+  "type": "panel",
+  "items": {
+    "hdrReceiver": {
+      "type": "header",
+      "text": "EDP receiver (ioBroker)",
+      "size": 3
+    },
+    "bind": {
+      "type": "ip",
+      "label": "Listen on IP",
+      "listenOnAllPorts": true,
+      "default": "0.0.0.0",
+      "xs": 12, "sm": 6, "md": 4
+    },
+    "port": {
+      "type": "port",
+      "label": "Listen port",
+      "help": "Must match 'Receiver IP Port' in the panel",
+      "min": 1, "max": 65535,
+      "default": 50000,
+      "xs": 12, "sm": 6, "md": 4
+    },
+    "receiverId": {
+      "type": "number",
+      "label": "Receiver ID",
+      "help": "Must match the receiver ID configured in the panel",
+      "min": 1,
+      "default": 1001,
+      "newLine": true,
+      "xs": 12, "sm": 6, "md": 4
+    },
+    "panelId": {
+      "type": "number",
+      "label": "Expected panel ID (0 = any)",
+      "min": 0,
+      "default": 0,
+      "xs": 12, "sm": 6, "md": 4
+    },
+    "useEncryption": {
+      "type": "checkbox",
+      "label": "Use EDP encryption",
+      "newLine": true,
+      "xs": 12
+    },
+    "key": {
+      "type": "password",
+      "label": "Encryption key (32 hex digits)",
+      "hidden": "!data.useEncryption",
+      "validator": "!data.useEncryption || /^[0-9a-fA-F]{32}$/.test(data.key)",
+      "validatorErrorText": "Key must be 32 hex digits",
+      "validatorNoSaveOnError": true,
+      "xs": 12, "sm": 12, "md": 8
+    },
+    "hdrBehaviour": {
+      "type": "header",
+      "text": "Behaviour",
+      "size": 3,
+      "newLine": true
+    },
+    "refreshInterval": {
+      "type": "number",
+      "label": "Full refresh interval (seconds)",
+      "help": "Zone events arrive immediately; the refresh catches missed events",
+      "min": 10,
+      "default": 60,
+      "xs": 12, "sm": 6, "md": 4
+    },
+    "allowControl": {
+      "type": "checkbox",
+      "label": "Allow arming/disarming areas from ioBroker",
+      "help": "Creates writable areas.<id>.setMode states. Anyone with write access to ioBroker can then disarm the alarm system!",
+      "newLine": true,
+      "xs": 12
+    }
+  }
+}

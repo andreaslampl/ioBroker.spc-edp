@@ -1,0 +1,17 @@
+{
+  "EDP receiver (ioBroker)": "EDP receiver (ioBroker)",
+  "Listen on IP": "Listen on IP",
+  "Listen port": "Listen port",
+  "Must match 'Receiver IP Port' in the panel": "Must match 'Receiver IP Port' in the panel",
+  "Receiver ID": "Receiver ID",
+  "Must match the receiver ID configured in the panel": "Must match the receiver ID configured in the panel",
+  "Expected panel ID (0 = any)": "Expected panel ID (0 = any)",
+  "Use EDP encryption": "Use EDP encryption",
+  "Encryption key (32 hex digits)": "Encryption key (32 hex digits)",
+  "Key must be 32 hex digits": "Key must be 32 hex digits",
+  "Behaviour": "Behaviour",
+  "Full refresh interval (seconds)": "Full refresh interval (seconds)",
+  "Zone events arrive immediately; the refresh catches missed events": "Zone events arrive immediately; the refresh catches missed events",
+  "Allow arming/disarming areas from ioBroker": "Allow arming/disarming areas from ioBroker",
+  "Creates writable areas.<id>.setMode states. Anyone with write access to ioBroker can then disarm the alarm system!": "Creates writable areas.<id>.setMode states. Anyone with write access to ioBroker can then disarm the alarm system!"
+}

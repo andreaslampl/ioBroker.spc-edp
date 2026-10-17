@@ -1,0 +1,141 @@
+{
+  "common": {
+    "name": "spc-edp",
+    "version": "0.1.0",
+    "news": {
+      "0.1.0": {
+        "en": "Initial release",
+        "de": "Erste Version"
+      }
+    },
+    "titleLang": {
+      "en": "Vanderbilt SPC (EDP)",
+      "de": "Vanderbilt SPC (EDP)"
+    },
+    "desc": {
+      "en": "Reads areas and zones of a Vanderbilt SPC alarm panel via EDP and can arm/disarm areas",
+      "de": "Liest Bereiche und Zonen einer Vanderbilt SPC Einbruchmeldezentrale über EDP und kann Bereiche scharf-/unscharfschalten"
+    },
+    "authors": ["andylampl"],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "mode": "daemon",
+    "icon": "spc-edp.png",
+    "enabled": true,
+    "type": "alarm",
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "push",
+    "adminUI": {
+      "config": "json"
+    },
+    "tier": 2,
+    "dependencies": [{ "js-controller": ">=5.0.19" }],
+    "globalDependencies": [{ "admin": ">=6.0.0" }]
+  },
+  "native": {
+    "bind": "0.0.0.0",
+    "port": 50000,
+    "receiverId": 1001,
+    "panelId": 0,
+    "useEncryption": false,
+    "key": "",
+    "refreshInterval": 60,
+    "allowControl": false
+  },
+  "encryptedNative": ["key"],
+  "protectedNative": ["key"],
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": { "name": "Information" },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": { "role": "indicator.connected", "name": "Panel connected", "type": "boolean", "read": true, "write": false, "def": false },
+      "native": {}
+    },
+    {
+      "_id": "info.panelId",
+      "type": "state",
+      "common": { "role": "info.address", "name": "EDP panel ID", "type": "number", "read": true, "write": false },
+      "native": {}
+    },
+    {
+      "_id": "info.panelType",
+      "type": "state",
+      "common": { "role": "info.name", "name": "Panel type", "type": "string", "read": true, "write": false },
+      "native": {}
+    },
+    {
+      "_id": "info.firmware",
+      "type": "state",
+      "common": { "role": "info.firmware", "name": "Firmware version", "type": "string", "read": true, "write": false },
+      "native": {}
+    },
+    {
+      "_id": "info.serial",
+      "type": "state",
+      "common": { "role": "info.serial", "name": "Serial number", "type": "string", "read": true, "write": false },
+      "native": {}
+    },
+    {
+      "_id": "info.lastCommandResult",
+      "type": "state",
+      "common": { "role": "text", "name": "Result of the last area command", "type": "string", "read": true, "write": false },
+      "native": {}
+    },
+    {
+      "_id": "areas",
+      "type": "folder",
+      "common": { "name": { "en": "Areas", "de": "Bereiche" } },
+      "native": {}
+    },
+    {
+      "_id": "zones",
+      "type": "folder",
+      "common": { "name": { "en": "Zones", "de": "Zonen" } },
+      "native": {}
+    },
+    {
+      "_id": "events",
+      "type": "channel",
+      "common": { "name": { "en": "Last SIA event", "de": "Letztes SIA-Ereignis" } },
+      "native": {}
+    },
+    {
+      "_id": "events.lastCode",
+      "type": "state",
+      "common": { "role": "text", "name": "SIA code", "type": "string", "read": true, "write": false },
+      "native": {}
+    },
+    {
+      "_id": "events.lastAddress",
+      "type": "state",
+      "common": { "role": "text", "name": "Address (zone/area/user)", "type": "string", "read": true, "write": false },
+      "native": {}
+    },
+    {
+      "_id": "events.lastDescription",
+      "type": "state",
+      "common": { "role": "text", "name": "Description", "type": "string", "read": true, "write": false },
+      "native": {}
+    },
+    {
+      "_id": "events.lastTimestamp",
+      "type": "state",
+      "common": { "role": "text", "name": "Panel time of the event", "type": "string", "read": true, "write": false },
+      "native": {}
+    },
+    {
+      "_id": "events.last",
+      "type": "state",
+      "common": { "role": "json", "name": "Full event (JSON)", "type": "string", "read": true, "write": false },
+      "native": {}
+    }
+  ]
+}
