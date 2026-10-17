@@ -75,18 +75,23 @@ Die Menübezeichnungen können je nach Firmware/Sprache leicht abweichen. Siehe 
   kann jeder mit Schreibrechten in ioBroker (Skripte, VIS, Apps) die Anlage unscharf schalten.
 - Bei VdS-/versicherungsrelevanten Anlagen die Änderung mit dem Errichter abstimmen.
 
-## Installation (lokal, ohne npm-Registry)
+## Installation
+
+Im ioBroker-Admin unter **Adapter** das GitHub-Symbol (*Installieren aus eigener URL*)
+anklicken, Reiter **Benutzerdefiniert**, folgende URL eintragen und installieren:
+
+```
+https://github.com/andreaslampl/ioBroker.spc-edp
+```
+
+Oder auf der Konsole:
 
 ```bash
-# Paket auf den ioBroker-Server kopieren, dann:
-cd /opt/iobroker
-npm install /pfad/zu/iobroker.spc-edp-0.1.0.tgz
-iobroker upload spc-edp
+iobroker url https://github.com/andreaslampl/ioBroker.spc-edp
 iobroker add spc-edp
 ```
 
-Alternativ das Projekt in ein GitHub-Repo legen und im Admin über
-*Adapter → Installieren aus eigener URL* installieren.
+Danach die Instanz konfigurieren (Empfänger-ID, Port, ggf. Schlüssel).
 
 ## Entwicklung
 
