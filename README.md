@@ -15,7 +15,9 @@ von Ian Duffy (MIT), getestet dort mit einer SPC4300 / Firmware 3.15.0.
 
 ## Einrichtung an der Zentrale
 
-Im Webinterface der SPC (Errichter-/Engineer-Modus): **Kommunikation → Berichte → EDP**
+Im Webinterface der SPC (Errichtermodus): je nach Firmware unter **Kommunikation → Div. Protokolle → EDP**
+oder **Kommunikation → Berichte → EDP**. Die globalen Einstellungen erreicht man über die
+Schaltfläche *Einstellungen* unter der Empfängerliste.
 
 **1. Einstellungen (EDP global aktivieren)**
 
@@ -34,7 +36,7 @@ Im Webinterface der SPC (Errichter-/Engineer-Modus): **Kommunikation → Bericht
 | Empfänger-ID | wie im Adapter, z. B. `1001` |
 | Protokollversion | Version 2 |
 | Befehle aktivieren / Netzwerk aktivieren | ✔ |
-| Netzwerkprotokoll | TCP/IP |
+| Netzwerkprotokoll | **TCP/IP** (nicht UDP/IP!) |
 | Empfänger IP-Adresse | IP des ioBroker-Servers |
 | Empfänger IP-Port | Port im Adapter, Standard `50000` |
 | Immer verbunden / Primärer Empfänger | ✔ |
