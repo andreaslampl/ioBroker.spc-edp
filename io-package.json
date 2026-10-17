@@ -1,8 +1,12 @@
 {
   "common": {
     "name": "spc-edp",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "news": {
+      "0.1.1": {
+        "en": "More diagnostic logging for connection problems",
+        "de": "Mehr Diagnose-Logs bei Verbindungsproblemen"
+      },
       "0.1.0": {
         "en": "Initial release",
         "de": "Erste Version"
